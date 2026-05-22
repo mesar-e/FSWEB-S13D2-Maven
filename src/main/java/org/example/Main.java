@@ -32,6 +32,30 @@ public class Main {
     }
 
     public static String numberToWords(int number) {
-        return "";
+        if (number < 0) {
+            return "Invalid Value";
+        }
+
+        char[] digits = String.valueOf(number).toCharArray();
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < digits.length; i++) {
+            switch (digits[i]) {
+                case '0': result.append("Zero"); break;
+                case '1': result.append("One"); break;
+                case '2': result.append("Two"); break;
+                case '3': result.append("Three"); break;
+                case '4': result.append("Four"); break;
+                case '5': result.append("Five"); break;
+                case '6': result.append("Six"); break;
+                case '7': result.append("Seven"); break;
+                case '8': result.append("Eight"); break;
+                case '9': result.append("Nine"); break;
+            }
+            if (i < digits.length - 1) {
+                result.append(" ");
+            }
+        }
+        return result.toString();
     }
 }
